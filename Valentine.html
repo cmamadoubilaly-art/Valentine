@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Question très importante ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #000;
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    img {
+        max-width: 90%;
+        max-height: 60vh;
+        margin-bottom: 25px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        margin-bottom: 25px;
+        font-size: 22px;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+    }
+
+    button {
+        padding: 15px 35px;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #yes {
+        background: #e60073;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    #no {
+        background: #444;
+        color: #fff;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+
+<img
+  id="mainMedia"
+  src="https://codekagehq.github.io/Ask-out-your-Valentine/images/image1.gif"
+  alt="Valentine GIF"
+/>
+
+<h1 id="question">
+ Batoma 💘 Veux-tu être ma Valentine le 14 février 2026 ?
+</h1>
+
+<div class="buttons" id="buttons">
+    <button id="yes">OUI ❤️</button>
+    <button id="no">NON 💔</button>
+</div>
+
+<script>
+    const yesBtn = document.getElementById("yes");
+    const noBtn = document.getElementById("no");
+    const media = document.getElementById("mainMedia");
+    const question = document.getElementById("question");
+    const buttons = document.getElementById("buttons");
+
+    let scale = 1;
+
+    noBtn.addEventListener("click", () => {
+        scale += 0.4;
+        yesBtn.style.transform = `scale(${scale})`;
+
+        if (scale >= 4.5) {
+            noBtn.classList.add("hidden");
+            yesBtn.style.width = "100vw";
+            yesBtn.style.height = "100vh";
+            yesBtn.style.fontSize = "42px";
+            yesBtn.innerText = "OUI ❤️😍";
+        }
+    });
+
+    yesBtn.addEventListener("click", () => {
+        media.src = "https://acegif.com/wp-content/uploads/2021/4fh5wi/valentinenwen-9.gif";
+        question.innerText = "Tu viens de me rendre très heureux ❤️";
+        buttons.classList.add("hidden");
+    });
+</script>
+
+</body>
+</html>
